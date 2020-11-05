@@ -6,6 +6,7 @@
 
 //打开商品列表页面
 #define OPEN_GOODS_LIST_PAGE    @"hh://openGoodsListPage"
+#define OPEN_GOODS_PAGE    @"hh://openGoodsPage"
 
 #define FACE_PATH    @"hh://facePath"
 #define getLocation    @"hh://getLocation"
@@ -34,7 +35,8 @@
 - (BOOL)application:(UIApplication *)application
     didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
   [GeneratedPluginRegistrant registerWithRegistry:self];
-  
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(notification:) name:@"channel" object:nil];
+
     
     FlutterViewController* controller =
         (FlutterViewController*)self.window.rootViewController;
@@ -107,7 +109,7 @@
 //使用object处理消息
     NSString *info = [noti object];
     NSLog(@"接收 object传递的消息：%@",info);
-    [channel invokeMethod:FACE_PATH arguments:info];
+    [channel invokeMethod:OPEN_GOODS_PAGE arguments:info];
 
 }
 

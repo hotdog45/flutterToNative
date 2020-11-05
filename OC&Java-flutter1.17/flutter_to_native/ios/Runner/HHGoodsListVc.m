@@ -68,7 +68,8 @@
     
     GoodsModel *m = self.dataArray[indexPath.row];//取出数组元素
     
-    [[NSNotificationCenter defaultCenter] postNotificationName:@"channel" object:m];
+    [[NSNotificationCenter defaultCenter] postNotificationName:@"channel" object:[NSString stringWithFormat:@"商品:%@,价格:%@",m.name,m.price]];
+    [self dismissViewControllerAnimated:YES completion:nil];
 }
 //每个单元格的内容
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{

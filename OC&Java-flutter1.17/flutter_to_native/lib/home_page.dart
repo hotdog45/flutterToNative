@@ -3,6 +3,7 @@ import 'dart:math';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
+import 'package:flutter_to_native/goods_page.dart';
 import 'package:flutter_to_native/login_page.dart';
 
 import 'method_channel.dart';
@@ -32,10 +33,12 @@ class _HomePageState extends State<HomePage> {
         .setMethodCallHandler(platformCallHandler); //设置监听
     super.initState();
   }
-
+//#define OPEN_GOODS_PAGE    @"hh://openGoodsPage"
   Future<dynamic> platformCallHandler(MethodCall call) async {
     switch (call.method) {
-      case "hh://facePath":
+      case "hh://openGoodsPage":
+        Navigator.push(context,
+            CupertinoPageRoute(builder: (context) => GoodsPage(name: call.arguments,)));
         break;
       case "hh://postLocation":
         // Fluttertoast.showToast(msg: "定位22222222:"+call.arguments.toString());
@@ -99,7 +102,7 @@ class _HomePageState extends State<HomePage> {
                   MyMethodChannel.invokeMethod(MyMethodChannel.GET_LOCATION);
                 },
               )),
-          Text("当前定位:_longitude=" + _longitude   + "/==_latitude==>" + _latitude  )
+          Text("当前定位:longitude=" + _longitude   + "\nlatitude=" + _latitude  )
         ],
       ),
     );
