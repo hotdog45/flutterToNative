@@ -62,7 +62,7 @@
       }
     }];
 
-    
+    [self initializeLocationService];
   return [super application:application didFinishLaunchingWithOptions:launchOptions];
 }
 
@@ -96,8 +96,8 @@
     _la = [NSString stringWithFormat:@"%f",location.coordinate.latitude];
     _lo = [NSString stringWithFormat:@"%f",location.coordinate.longitude];
 
-    NSDictionary *dic = @{@"latitude":_la, @"longitude":_lo};
-    [channel invokeMethod:postLocation arguments:dic];
+//    NSDictionary *dic = @{@"latitude":_la, @"longitude":_lo};
+//    [channel invokeMethod:postLocation arguments:dic];
     
 //    [manager stopUpdatingLocation];不用的时候关闭更新位置服务
 }
