@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical" android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <TextView
+        android:id="@+id/tv_goods_list"
+        android:layout_width="200dp"
+        android:layout_height="60dp"
+        android:layout_marginTop="100dp"
+        android:text="这是商品列表页"
+        android:layout_gravity="center"
+        android:gravity="center"
+        android:textColor="#fff"
+        android:background="#009011"/>
+
+
+    <TextView
+        android:id="@+id/tv_go_goods"
+        android:layout_marginTop="200dp"
+        android:layout_width="200dp"
+        android:layout_height="60dp"
+        android:text="跳转到商品详情"
+        android:layout_gravity="center"
+        android:gravity="center"
+        android:background="#909081"/>
+</LinearLayout>

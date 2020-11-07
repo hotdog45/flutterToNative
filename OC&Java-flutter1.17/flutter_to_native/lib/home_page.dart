@@ -98,8 +98,16 @@ class _HomePageState extends State<HomePage> {
                 child: Text("获取当前定位"),
                 shape: RoundedRectangleBorder(
                     borderRadius: BorderRadius.circular(20.0)),
-                onPressed: () {
-                  MyMethodChannel.invokeMethod(MyMethodChannel.GET_LOCATION);
+                onPressed: () async{
+                 var map = await  MyMethodChannel.invokeMethod(MyMethodChannel.GET_LOCATION);
+                 if (map ==null ||  map.toString().isEmpty){
+                   print("获取定位失败==>+"+map.toString());
+                   return;
+                 }
+                  _latitude = (map as Map)["latitude"].toString();
+                  _longitude = (map as Map)["longitude"].toString();
+
+                  setState(() {});
                 },
               )),
           Text("当前定位:longitude=" + _longitude   + "\nlatitude=" + _latitude  )

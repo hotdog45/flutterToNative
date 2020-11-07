@@ -58,7 +58,8 @@
       } else if ([getLocation isEqualToString:call.method]) {
           
           NSDictionary *dic = @{@"latitude":_la, @"longitude":_lo};
-          [channel invokeMethod:postLocation arguments:dic];
+//          [channel invokeMethod:postLocation arguments:dic];
+          result(dic);
       } else{
         result(FlutterMethodNotImplemented);
       }
@@ -99,6 +100,7 @@
     _lo = [NSString stringWithFormat:@"%f",location.coordinate.longitude];
 
 //    NSDictionary *dic = @{@"latitude":_la, @"longitude":_lo};
+    //主动向flutter发送定位
 //    [channel invokeMethod:postLocation arguments:dic];
     
 //    [manager stopUpdatingLocation];不用的时候关闭更新位置服务
