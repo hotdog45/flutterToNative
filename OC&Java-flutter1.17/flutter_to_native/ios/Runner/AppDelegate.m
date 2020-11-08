@@ -8,7 +8,6 @@
 #define OPEN_GOODS_LIST_PAGE    @"hh://openGoodsListPage"
 #define OPEN_GOODS_PAGE    @"hh://openGoodsPage"
 
-#define FACE_PATH    @"hh://facePath"
 #define getLocation    @"hh://getLocation"
 #define postLocation    @"hh://postLocation"
 #import "HHGoodsListVc.h"

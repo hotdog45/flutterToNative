@@ -24,18 +24,16 @@ public class MainActivity extends FlutterActivity {
 
     private static final String channelName = "hh://MethodChannelPlugin"; //
 
-    //打开
+    //打开商品列表页
     private static final String OPEN_GOODS_LIST_PAGE = "hh://openGoodsListPage";
 
     // 获取定位
     private static final String GET_LOCATION = "hh://getLocation";
 
-    //人脸识别回调
-    private static final String FACE_PATH = "hh://facePath";
     private static final String POST_LOCATION = "hh://postLocation";
 
 
-    private  MethodChannel methodChannel;
+    private MethodChannel methodChannel;
 
 
     @Override
@@ -55,14 +53,14 @@ public class MainActivity extends FlutterActivity {
 
                     if (methodCall.method.equals(OPEN_GOODS_LIST_PAGE)) {
                         Intent intent = new Intent(MainActivity.this, GoodsListActivity.class);
-                        startActivityForResult(intent,110);
+                        startActivityForResult(intent, 110);
                     } else if (methodCall.method.equals(GET_LOCATION)) {
                         getLocation();
                         Map map2 = new HashMap();
-                        map2.put("longitude",mLocation.getLongitude());
-                        map2.put("latitude",mLocation.getLatitude());
+                        map2.put("longitude", mLocation.getLongitude());
+                        map2.put("latitude", mLocation.getLatitude());
                         result.success(map2);
-                    }  else {
+                    } else {
                         result.notImplemented();
                     }
                 }
@@ -78,7 +76,7 @@ public class MainActivity extends FlutterActivity {
         if (resultCode == RESULT_OK) {
             if (requestCode == 110) {
                 String faceImage = data.getStringExtra("dic");//
-                methodChannel.invokeMethod("hh://openGoodsPage",faceImage);
+                methodChannel.invokeMethod("hh://openGoodsPage", faceImage);
 
             }
         }
@@ -106,7 +104,8 @@ public class MainActivity extends FlutterActivity {
     LocationManager locationManager;
     LocationListener locationListener;
     Location mLocation;
-    void getLocation(){
+
+    void getLocation() {
         //获取系统的LocationManager对
         locationManager = (LocationManager) getSystemService(LOCATION_SERVICE);
         //添加权限检查
@@ -156,12 +155,7 @@ public class MainActivity extends FlutterActivity {
                 locationListener);
 
 
-
     }
-
-
-
-
 
 
 }
