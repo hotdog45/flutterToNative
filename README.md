@@ -11,10 +11,10 @@
 *  添加 Flutter-widget 到 iOS UIView
 
 ## 开发环境
-flutter   v1.22.3
-Dart SDK version: 2.10.3 (stable)
-Android Studio version 4.1
-Android SDK version 29.0.3
-Xcode 12.1
-Mac OS X 10.15.7
+*  flutter   v1.22.3
+*  Dart SDK version: 2.10.3 (stable)
+*  Android Studio version 4.1
+*  Android SDK version 29.0.3
+*  Xcode 12.1
+*  Mac OS X 10.15.7
 
