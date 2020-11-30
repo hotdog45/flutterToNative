@@ -1,6 +1,9 @@
 import 'dart:math';
 
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+
+import 'home_page.dart';
 /**
  * Copyright (C), 2015-2020, 谊品生鲜
  * FileName: home_page
@@ -13,6 +16,9 @@ import 'package:flutter/material.dart';
  */
 
 class LoginPage extends StatefulWidget {
+  final String route;
+
+  const LoginPage({Key key, this.route}) : super(key: key);
   @override
   _LoginPageState createState() => _LoginPageState();
 }
@@ -32,11 +38,12 @@ class _LoginPageState extends State<LoginPage> {
               width: double.infinity,
               child: FlatButton(
                 color: getRandomColor(),
-                child: Text("立即登录"),
+                child: Text("route"+widget.route),
                 shape: RoundedRectangleBorder(
                     borderRadius: BorderRadius.circular(20.0)),
                 onPressed: () {
-
+                  Navigator.push(context,
+                      CupertinoPageRoute(builder: (context) => HomePage()));
 
 
                 },

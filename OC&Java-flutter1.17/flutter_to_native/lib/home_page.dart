@@ -19,6 +19,9 @@ import 'my_method_channel.dart';
  */
 
 class HomePage extends StatefulWidget {
+  final String route;
+
+  const HomePage({Key key, this.route}) : super(key: key);
   @override
   _HomePageState createState() => _HomePageState();
 }
@@ -60,7 +63,7 @@ class _HomePageState extends State<HomePage> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text("首页"),
+        title: Text("首页"+widget.route),
       ),
       body: Column(
         children: <Widget>[
@@ -91,6 +94,21 @@ class _HomePageState extends State<HomePage> {
                 onPressed: () {
                   Navigator.push(context,
                       CupertinoPageRoute(builder: (context) => LoginPage()));
+                },
+              )),
+          Container(
+              margin: EdgeInsets.only(left: 50, top: 20, right: 50),
+              height: 46,
+              width: double.infinity,
+              child: FlatButton(
+                color: getRandomColor(),
+                child: Text("去首页"),
+                shape: RoundedRectangleBorder(
+                    borderRadius: BorderRadius.circular(20.0)),
+                onPressed: () {
+                  MyMethodChannel.invokeMethod(
+                      MyMethodChannel.OPEN_HOME_PAGE,
+                      {"id": "aabbbcccc"});
                 },
               )),
           Container(

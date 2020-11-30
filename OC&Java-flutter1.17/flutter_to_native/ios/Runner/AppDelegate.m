@@ -8,10 +8,12 @@
 #define OPEN_GOODS_LIST_PAGE    @"hh://openGoodsListPage"
 #define OPEN_GOODS_PAGE    @"hh://openGoodsPage"
 
+#define OPEN_HOME_PAGE  @"hh://openNativeHomePage"
+
 #define getLocation    @"hh://getLocation"
 #define postLocation    @"hh://postLocation"
 #import "HHGoodsListVc.h"
-
+#import "HomeViewController.h"
 #import <CoreLocation/CoreLocation.h>
 
 
@@ -52,6 +54,22 @@
           UINavigationController *navi = [[UINavigationController alloc] initWithRootViewController:lvc];
           navi.navigationBarHidden = true;
           [controller presentViewController:navi animated:YES completion:nil];
+          result(@"");
+        
+      } if ([OPEN_HOME_PAGE isEqualToString:call.method]) {
+        
+          FlutterEngine *flutterEngine =
+              [[FlutterEngine alloc] initWithName:@"my flutter engine"];
+//          [[flutterEngine navigationChannel] invokeMethod:@"setInitialRoute"
+//                                                arguments:@"/1234"];
+//          [flutterEngine run];
+          [flutterEngine runWithEntrypoint:@"biz1" libraryURI:nil];
+          
+          HomeViewController* vc = [[HomeViewController alloc] initWithEngine:flutterEngine nibName:nil bundle:nil];
+          
+//          HomeViewController* vc = [[HomeViewController alloc] init];
+//          [vc setInitialRoute:@"====="];
+          [controller presentViewController:vc animated:YES completion:nil];
           result(@"");
         
       } else if ([getLocation isEqualToString:call.method]) {

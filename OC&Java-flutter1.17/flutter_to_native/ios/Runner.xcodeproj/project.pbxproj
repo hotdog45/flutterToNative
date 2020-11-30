@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0402F519256CFD3100A19F11 /* HomeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0402F518256CFD3100A19F11 /* HomeViewController.m */; };
 		1498D2341E8E89220040F4C2 /* GeneratedPluginRegistrant.m in Sources */ = {isa = PBXBuildFile; fileRef = 1498D2331E8E89220040F4C2 /* GeneratedPluginRegistrant.m */; };
 		36AF51462554573F005A2F74 /* HHGoodsListVc.m in Sources */ = {isa = PBXBuildFile; fileRef = 36AF51452554573F005A2F74 /* HHGoodsListVc.m */; };
 		36AF514925545804005A2F74 /* GoodsModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 36AF514825545804005A2F74 /* GoodsModel.m */; };
@@ -32,6 +33,8 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		0402F517256CFD3100A19F11 /* HomeViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HomeViewController.h; sourceTree = "<group>"; };
+		0402F518256CFD3100A19F11 /* HomeViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HomeViewController.m; sourceTree = "<group>"; };
 		1498D2321E8E86230040F4C2 /* GeneratedPluginRegistrant.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = GeneratedPluginRegistrant.h; sourceTree = "<group>"; };
 		1498D2331E8E89220040F4C2 /* GeneratedPluginRegistrant.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GeneratedPluginRegistrant.m; sourceTree = "<group>"; };
 		36AF51442554573F005A2F74 /* HHGoodsListVc.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HHGoodsListVc.h; sourceTree = "<group>"; };
@@ -107,6 +110,8 @@
 				36AF51452554573F005A2F74 /* HHGoodsListVc.m */,
 				36AF514725545804005A2F74 /* GoodsModel.h */,
 				36AF514825545804005A2F74 /* GoodsModel.m */,
+				0402F517256CFD3100A19F11 /* HomeViewController.h */,
+				0402F518256CFD3100A19F11 /* HomeViewController.m */,
 			);
 			path = Runner;
 			sourceTree = "<group>";
@@ -229,6 +234,7 @@
 				1498D2341E8E89220040F4C2 /* GeneratedPluginRegistrant.m in Sources */,
 				36AF51462554573F005A2F74 /* HHGoodsListVc.m in Sources */,
 				36AF514925545804005A2F74 /* GoodsModel.m in Sources */,
+				0402F519256CFD3100A19F11 /* HomeViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

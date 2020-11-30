@@ -8,6 +8,9 @@ class MyMethodChannel {
   //打开商品详情页
   static const String OPEN_GOODS_LIST_PAGE = "hh://openGoodsListPage";
 
+  //打开原生首页
+  static const String OPEN_HOME_PAGE = "hh://openNativeHomePage";
+
   //获取定位
   static const String GET_LOCATION = "hh://getLocation";
 
